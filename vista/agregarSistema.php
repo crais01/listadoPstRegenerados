@@ -42,9 +42,8 @@
 $("#enviar").click(function(event) {
     var ordenCompra = document.getElementById('pst').value;
     var sistema = document.getElementById('sistema').value;
-    var municipalidad = document.getElementById('municipalidad').value;
-    var motivo = document.getElementById('motivo').value;
-    $("#resultado").load("controlador/c_agregarPST.php",{pst:ordenCompra,sis:sistema,muni:municipalidad,motivo:motivo}, function(response, status, xhr) {
+
+    $("#resultado").load("controlador/c_agregarSistema.php",{pst:ordenCompra,sis:sistema,muni:municipalidad,motivo:motivo}, function(response, status, xhr) {
         if (status == "error") {
             var msg = "Error!, algo ha sucedido: ";
             $("#resultado").html(msg + xhr.status + " " + xhr.statusText);

@@ -3,17 +3,16 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <!--<span id="agregar" class="nav-link">Agregar PST</span>-->
-        <a id="agregar" class="nav-link" style="cursor: pointer">Agregar PST</a>
-      </li>
-      <li class="nav-item">
         <a id="listado" class="nav-link" style="cursor: pointer">Listado</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor: pointer"></a>
+        <a id="agregar" class="nav-link" style="cursor: pointer">Agregar PST</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" style="cursor: pointer"></a>
+        <a id="agregarMuni" class="nav-link" style="cursor: pointer">Agregar Municipio</a>
+      </li>
+      <li class="nav-item">
+        <a id="agregarSis" class="nav-link" style="cursor: pointer">Agregar Sistema</a>
       </li>
     </ul>
   </div>
@@ -22,7 +21,6 @@
 </div>
 <?php include('footer.php'); ?>
 <script>
-
 $("#agregar").click(function(event) {
     $("#container").load("vista/agregarPST.php", function(response, status, xhr) {
         if (status == "error") {
@@ -31,7 +29,6 @@ $("#agregar").click(function(event) {
         }
     });
 });
-
 $("#listado").click(function(event) {
     $("#container").load("vista/listadoPST.php", function(response, status, xhr) {
         if (status == "error") {
@@ -40,5 +37,20 @@ $("#listado").click(function(event) {
         }
     });
 });
-
+$("#agregarMuni").click(function(event) {
+    $("#container").load("vista/agregarMunicipio.php", function(response, status, xhr) {
+        if (status == "error") {
+            var msg = "Error!, algo ha sucedido: ";
+            $("#container").html(msg + xhr.status + " " + xhr.statusText);
+        }
+    });
+});
+$("#agregarSis").click(function(event) {
+    $("#container").load("vista/agregarSistema.php", function(response, status, xhr) {
+        if (status == "error") {
+            var msg = "Error!, algo ha sucedido: ";
+            $("#container").html(msg + xhr.status + " " + xhr.statusText);
+        }
+    });
+});
 </script>
