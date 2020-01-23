@@ -46,7 +46,7 @@ $("#agregarMuni").click(function(event) {
     });
 });
 $("#agregarSis").click(function(event) {
-    $("#container").load("vista/agregarSistema.php", function(response, status, xhr) {
+    $("#container").load("vista/agregarPortal.php", function(response, status, xhr) {
         if (status == "error") {
             var msg = "Error!, algo ha sucedido: ";
             $("#container").html(msg + xhr.status + " " + xhr.statusText);
