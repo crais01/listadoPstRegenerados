@@ -12,6 +12,9 @@
         <a id="agregarMuni" class="nav-link" style="cursor: pointer">Agregar Municipio</a>
       </li>
       <li class="nav-item">
+        <a id="agregarPor" class="nav-link" style="cursor: pointer">Agregar Portal</a>
+      </li>
+      <li class="nav-item">
         <a id="agregarSis" class="nav-link" style="cursor: pointer">Agregar Sistema</a>
       </li>
     </ul>
@@ -39,6 +42,14 @@ $("#listado").click(function(event) {
 });
 $("#agregarMuni").click(function(event) {
     $("#container").load("vista/agregarMunicipio.php", function(response, status, xhr) {
+        if (status == "error") {
+            var msg = "Error!, algo ha sucedido: ";
+            $("#container").html(msg + xhr.status + " " + xhr.statusText);
+        }
+    });
+});
+$("#agregarPor").click(function(event) {
+    $("#container").load("vista/agregarPortal.php", function(response, status, xhr) {
         if (status == "error") {
             var msg = "Error!, algo ha sucedido: ";
             $("#container").html(msg + xhr.status + " " + xhr.statusText);

@@ -8,7 +8,7 @@ if(is_null($resMunicipio)){
 }else{
     foreach($resMunicipio as $row)
     {
-        echo "<option value='".$row['id_municipalidad']."'>".$row['nombre']."</option>";
+        echo "<option value='".$row['codigo_municipalidad']."'>".$row['nombre_municipalidad']."</option>";
     }
 
 }

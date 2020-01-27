@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-6">
         <div class="form-group">
-            <label for="portal" class="h5">Sistema</label>
-            <input type="text" id="sistema" name="sistema" class="form-control"/>
+            <label for="portal" class="h5">Portal</label>
+            <input type="text" id="portal" name="portal" class="form-control"/>
         </div>
     </div> 
 </div>
@@ -10,22 +10,22 @@
         <input type="button" id="enviar" name="enviar" value="Guardar PST" class="btn btn-success" />
 </div>
 <div id="resultado"></div>
-<div id="listadosistema"></div>
+<div id="listadoportal"></div>
 <script>
 $("#enviar").click(function(event) {
-    var sistema = document.getElementById('sistema').value;
+    var portal = document.getElementById('portal').value;
 
-    $("#resultado").load("controlador/c_agregarSistema.php",{sis:sistema}, function(response, status, xhr) {
+    $("#resultado").load("controlador/c_agregarPortal.php",{por:portal}, function(response, status, xhr) {
         if (status == "error") {
             var msg = "Error!, algo ha sucedido: ";
             $("#resultado").html(msg + xhr.status + " " + xhr.statusText);
         }
     });
 });
-$("#listadosistema").load("controlador/c_listarSistema.php", function(response, status, xhr) {
+$("#listadoportal").load("controlador/c_listarPortal.php", function(response, status, xhr) {
         if (status == "error") {
             var msg = "Error!, algo ha sucedido: ";
-            $("#sistema").html(msg + xhr.status + " " + xhr.statusText);
+            $("#listadoportal").html(msg + xhr.status + " " + xhr.statusText);
         }
-});
+    });
 </script>

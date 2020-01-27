@@ -11,7 +11,7 @@
             <select id='sistema' name='sistema' class="form-control">
                 <option></option>
                 <?php
-                    include('../controlador/c_traerSistema.php');
+                    include('../controlador/c_traerPortal.php');
                 ?>
             </select>
         </div>

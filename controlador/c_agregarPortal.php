@@ -1,10 +1,10 @@
 <?php
 include('../modelo/pst.php');
-$sistema = $_POST['sis'];
+$portal = $_POST['por'];
 
-$respSistema = agregarSistema(strtoupper($sistema));
+$respPortal = agregarPortal(strtoupper($portal));
 //echo $respPortal;
-if($respSistema === 1){
+if($respPortal === 1){
     echo "agregado correctamente";
 }else{
     echo "problemas al insertar registro";
