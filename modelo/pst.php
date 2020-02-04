@@ -64,10 +64,10 @@ function traerMunicipio(){
     return $a;
 }
 
-function agregarPst($pst,$sistema,$municipalidad,$motivo){
+function agregarPst($pst,$sistema,$municipalidad,$motivo,$placaRol,$portal,$fecha_transaccion){
     global $cnx;
-    $sql = "insert into ordencompra(pst,sistema,municipalidad,motivo)
-            values('$pst',$sistema,$municipalidad,'$motivo')";
+    $sql = "insert into ordencompra(pst,motivo,id_municipalidad,id_portal,id_sistema,placa_rol,fecha_transaccion)
+            values('$pst','$motivo',id_municipalidad,id_portal,id_sistema,'$placa_rol','$fecha_transaccion')";
 
     //return $sql;
     if($cnx->query($sql) === true){

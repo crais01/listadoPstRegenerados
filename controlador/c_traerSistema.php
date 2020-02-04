@@ -1,5 +1,4 @@
 <?php
-include('../modelo/pst.php');
 
 $resSistema = traerSistema();
 
