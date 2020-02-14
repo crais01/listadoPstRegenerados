@@ -5,20 +5,15 @@ function traerPstRegenerados(){
     global $cnx;
     //$sql = "select pst,municipalidad,sistema,fecha_ingreso,motivo from ordencompra";
     $sql = "select 
-    oc.pst,oc.municipalidad,
-    case
-        when oc.municipalidad = m.id_municipalidad then m.nombre
-        else 'sin nombre'
-    end as 'muni',
-    oc.sistema,
-    case
-        when oc.sistema= s.id_sistema then s.nombre_sistema
-        else 'sin nombre'
-    end as 'sis',
-    oc.fecha_ingreso,oc.motivo 
+    oc.pst,
+    case when oc.id_municipalidad = m.id_municipalidad then m.nombre_municipalidad else 'sin nombre' end as 'municipalidad',
+    case when oc.id_sistema= s.id_sistema then s.nombre_sistema else 'sin nombre' end as 'sistema',
+    case when oc.id_portal= p.id_portal then p.nombre_portal else 'sin nombre' end as 'portal',
+    oc.fecha_ingreso
     from ordencompra oc
-    inner join municipalidad m on m.id_municipalidad = oc.municipalidad
-    inner join sistema s on s.id_sistema = oc.sistema";
+    inner join municipalidad m on m.id_municipalidad = oc.id_municipalidad
+    inner join portal p on p.id_portal = oc.id_portal
+    inner join sistema s on s.id_sistema = oc.id_sistema";
     
     $result = $cnx->query($sql);
     while($row = $result->fetch_array()){
