@@ -9,7 +9,7 @@ function traerPstRegenerados(){
     case when oc.id_municipalidad = m.id_municipalidad then m.nombre_municipalidad else 'sin nombre' end as 'municipalidad',
     case when oc.id_sistema= s.id_sistema then s.nombre_sistema else 'sin nombre' end as 'sistema',
     case when oc.id_portal= p.id_portal then p.nombre_portal else 'sin nombre' end as 'portal',
-    oc.fecha_ingreso,oc.fecha_transaccion,motivo
+    oc.fecha_ingreso,oc.fecha_transaccion,oc.motivo
     from ordencompra oc
     inner join municipalidad m on m.id_municipalidad = oc.id_municipalidad
     inner join portal p on p.id_portal = oc.id_portal
