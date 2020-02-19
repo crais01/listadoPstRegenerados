@@ -47,7 +47,7 @@
     <div class="col-6">
         <div class="form-group">
             <label for="fecha" class="h5">Fecha Transaccion</label>
-            <input type="text" id="fecha" name="fecha" class="form-control"/>
+            <input type="date" id="fecha" name="fecha" class="form-control"/>
         </div>
     </div>
     <div class="col-6">
@@ -62,6 +62,7 @@
 </div>
 <div id="resultado"></div>
 <script>
+
 $("#enviar").click(function(event) {
     var ordenCompra = document.getElementById('pst').value;
     var placaRol = document.getElementById('pr').value;

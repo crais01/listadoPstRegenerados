@@ -9,7 +9,7 @@ function traerPstRegenerados(){
     case when oc.id_municipalidad = m.id_municipalidad then m.nombre_municipalidad else 'sin nombre' end as 'municipalidad',
     case when oc.id_sistema= s.id_sistema then s.nombre_sistema else 'sin nombre' end as 'sistema',
     case when oc.id_portal= p.id_portal then p.nombre_portal else 'sin nombre' end as 'portal',
-    oc.fecha_ingreso
+    oc.fecha_ingreso,oc.fecha_transaccion,motivo
     from ordencompra oc
     inner join municipalidad m on m.id_municipalidad = oc.id_municipalidad
     inner join portal p on p.id_portal = oc.id_portal
@@ -62,10 +62,10 @@ function traerMunicipio(){
 function agregarPst($pst,$sistema,$municipalidad,$motivo,$placaRol,$portal,$fecha_transaccion){
     global $cnx;
     $sql = "insert into ordencompra(pst,motivo,id_municipalidad,id_portal,id_sistema,placa_rol,fecha_transaccion)
-            values('$pst','$motivo',id_municipalidad,id_portal,id_sistema,'$placa_rol','$fecha_transaccion')";
+            values('$pst','$motivo',$municipalidad,$portal,$sistema,'$placaRol','$fecha_transaccion')";
 
     //return $sql;
-    if($cnx->query($sql) === true){
+    if($cnx->query($sql) == true){
         return 1;
     }else{
         return 0;
