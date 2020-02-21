@@ -21,6 +21,15 @@ $("#enviar").click(function(event) {
             $("#resultado").html(msg + xhr.status + " " + xhr.statusText);
         }
     });
+    var cont = 0;
+    var id = setInterval(function(){
+        $("#listadoportal").load("controlador/c_listarPortal.php");
+        cont++;
+        if(cont == 1) 
+        {
+            clearInterval(id);
+        }
+    }, 1000); 
 });
 $("#listadoportal").load("controlador/c_listarPortal.php", function(response, status, xhr) {
         if (status == "error") {
