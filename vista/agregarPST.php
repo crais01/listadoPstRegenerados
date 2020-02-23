@@ -71,6 +71,7 @@ $("#enviar").click(function(event) {
     var municipalidad = document.getElementById('municipalidad').value;
     var ftransaccion = document.getElementById('fecha').value;
     var motivo = document.getElementById('motivo').value;
+  
     $("#resultado").load("controlador/c_agregarPST.php",{pst:ordenCompra,sis:sistema,muni:municipalidad,motivo:motivo,pr:placaRol,por:portal,ft:ftransaccion}, function(response, status, xhr) {
         if (status == "error") {
             var msg = "Error!, algo ha sucedido: ";

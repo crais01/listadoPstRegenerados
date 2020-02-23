@@ -10,8 +10,8 @@ $portal = $_POST['por'];
 $fecha_transaccion = $_POST['ft'];
 
 $resultadoPST = agregarPst($pst,$sistema,$municipalidad,$motivo,$placaRol,$portal,$fecha_transaccion);
-/*echo $resultadoPST;
-return;*/
+//echo $resultadoPST;
+//return;
 if($resultadoPST === 1){
     echo "agregado correctamente";
 }else{

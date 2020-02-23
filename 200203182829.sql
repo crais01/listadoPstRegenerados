@@ -12,10 +12,9 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `municipalidad`;
 CREATE TABLE `municipalidad` (
-  `id_municipalidad` int(11) NOT NULL AUTO_INCREMENT,
+  `id_municipalidad` int(11) NOT NULL,
   `nombre_municipalidad` varchar(50) DEFAULT NULL,
   `fecha_ingreso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `codigo_municipalidad` int(11) NOT NULL,
   PRIMARY KEY (`id_municipalidad`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -31,6 +30,7 @@ CREATE TABLE `ordencompra` (
   `id_portal` int(11) DEFAULT NULL,
   `id_sistema` int(11) DEFAULT NULL,
   `placa_rol` varchar(10) NOT NULL,
+  fecha_transaccion varchar(10)not null,
   PRIMARY KEY (`pst`),
   KEY `municipalidad` (`id_municipalidad`),
   KEY `portal` (`id_portal`),

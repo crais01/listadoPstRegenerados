@@ -33,7 +33,7 @@ $("#agregar").click(function(event) {
     });
 });
 $("#listado").click(function(event) {
-    $("#container").load("vista/listadoPST.php", function(response, status, xhr) {
+    $("#container").load("controlador/c_listadoPST.php", function(response, status, xhr) {
         if (status == "error") {
             var msg = "Error!, algo ha sucedido: ";
             $("#container").html(msg + xhr.status + " " + xhr.statusText);
