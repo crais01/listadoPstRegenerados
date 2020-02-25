@@ -12,6 +12,11 @@
                 </tr>
             </thead>
             <tbody id="contianerResultTable">
+<?php if(is_null($restPST)): ?>
+    <tr>
+                    <td>no existen registros</td>
+    </tr>
+<?php else: ?>
 <?php foreach($restPST as $pst): ?>
     <tr>
                     <td><?php echo $pst['pst']?></td>
@@ -23,8 +28,7 @@
                     <td><?php echo $pst['fecha_transaccion']?></td>
                     <td><?php echo $pst['fecha_ingreso']?></td>
     </tr>
-       
-
 <?php endforeach ?>
+<?php endif ?>
 </tbody>
 </table>

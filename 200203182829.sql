@@ -26,18 +26,15 @@ CREATE TABLE `ordencompra` (
   `pst` varchar(30) NOT NULL,
   `motivo` text,
   `fecha_ingreso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_municipalidad` int(11) DEFAULT NULL,
-  `id_portal` int(11) DEFAULT NULL,
-  `id_sistema` int(11) DEFAULT NULL,
+  `municipalidad` int(11) DEFAULT NULL,
+  `portal` int(11) DEFAULT NULL,
+  `sistema` int(11) DEFAULT NULL,
   `placa_rol` varchar(10) NOT NULL,
-  fecha_transaccion varchar(10)not null,
+  `fecha_transaccion` varchar(10)not null,
   PRIMARY KEY (`pst`),
-  KEY `municipalidad` (`id_municipalidad`),
-  KEY `portal` (`id_portal`),
-  KEY `sistema` (`id_sistema`),
-  CONSTRAINT `ordencompra_ibfk_1` FOREIGN KEY (`id_municipalidad`) REFERENCES `municipalidad` (`id_municipalidad`),
-  CONSTRAINT `ordencompra_ibfk_2` FOREIGN KEY (`id_portal`) REFERENCES `portal` (`id_portal`),
-  CONSTRAINT `ordencompra_ibfk_3` FOREIGN KEY (`id_sistema`) REFERENCES `sistema` (`id_sistema`)
+  FOREIGN KEY (`municipalidad`) REFERENCES `municipalidad` (`id_municipalidad`),
+  FOREIGN KEY (`portal`) REFERENCES `portal` (`id_portal`),
+  FOREIGN KEY (`sistema`) REFERENCES `sistema` (`id_sistema`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

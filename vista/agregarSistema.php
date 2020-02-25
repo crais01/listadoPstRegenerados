@@ -23,7 +23,7 @@ $("#enviar").click(function(event) {
     });
     var cont = 0;
     var id = setInterval(function(){
-        $("#listadosistema").load("controlador/c_listarSistema.php.php");
+        $("#listadosistema").load("controlador/c_listarSistema.php");
         cont++;
         if(cont == 1) 
         {
